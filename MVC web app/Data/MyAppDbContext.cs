@@ -1,9 +1,10 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using MVC_web_app.Models;
 
 namespace MVC_web_app.Data
 {
-    public class MyAppDbContext:DbContext
+    public class MyAppDbContext:IdentityDbContext<ApplicationUser>
     {
         public MyAppDbContext(DbContextOptions<MyAppDbContext> options):base(options){}
         protected override void OnModelCreating(ModelBuilder modelBuilder)
